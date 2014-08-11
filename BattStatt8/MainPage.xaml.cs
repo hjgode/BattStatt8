@@ -48,7 +48,8 @@ namespace BattStatt8
         void _battery_RemainingChargePercentChanged(object sender, object e)
         {
             txtPercent.Text = string.Format("{0} %", _battery.RemainingChargePercent);
-            txtTime.Text = string.Format("{0} : {1}", _battery.RemainingDischargeTime.Hours, _battery.RemainingDischargeTime.Minutes);
+            txtTime.Text = string.Format("{0} : {1} : {2}", _battery.RemainingDischargeTime.Days, _battery.RemainingDischargeTime.Hours, _battery.RemainingDischargeTime.Minutes);
+            ScheduledTaskAgent1.ScheduledAgent.updateTile();
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)

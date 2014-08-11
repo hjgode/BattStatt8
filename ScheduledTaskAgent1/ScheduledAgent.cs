@@ -73,7 +73,7 @@ namespace ScheduledTaskAgent1
             itd.Title = string.Format("{0} %", _battery.RemainingChargePercent);
             itd.WideContent1 = "Battery status:";
             itd.WideContent2 = string.Format("remaining charge: {0} %", _battery.RemainingChargePercent);
-            itd.WideContent3 = string.Format("remaining time:   {0} : {1}", _battery.RemainingDischargeTime.Hours, _battery.RemainingDischargeTime.Minutes);
+            itd.WideContent3 = string.Format("{0} : {1} : {2}", _battery.RemainingDischargeTime.Days, _battery.RemainingDischargeTime.Hours, _battery.RemainingDischargeTime.Minutes);
 
             //the following did not work using a FlipTile, so I stay with IconTile
             /*
@@ -114,6 +114,8 @@ namespace ScheduledTaskAgent1
             */
         }
 
+        Battery _g_battery = Battery.GetDefault();
+
         /// <summary>
         /// Agent that runs a scheduled task
         /// </summary>
@@ -126,10 +128,12 @@ namespace ScheduledTaskAgent1
         protected override void OnInvoke(ScheduledTask task)
         {
             //TODO: Add code to perform your task in background
-            string toastMessage = "";
 
             string battPerc = string.Format("{0} %", Battery.GetDefault().RemainingChargePercent);
             string battTime = string.Format("{0}:{1}", Battery.GetDefault().RemainingDischargeTime.Hours, Battery.GetDefault().RemainingDischargeTime.Minutes);
+
+            /* //no toast used
+            string toastMessage = "";
             // If your application uses both PeriodicTask and ResourceIntensiveTask
             // you can branch your application code here. Otherwise, you don't need to.
             if (task is PeriodicTask)
@@ -146,14 +150,15 @@ namespace ScheduledTaskAgent1
 
             toastMessage += "\n" + battPerc + "\n" + battTime;
             
-            updateTile();
-
             // Launch a toast to show that the agent is running.
             // The toast will not be shown if the foreground application is running.
             ShellToast toast = new ShellToast();
             toast.Title = "Background Agent Sample";
             toast.Content = toastMessage;
-            //toast.Show();
+            toast.Show();
+            */
+
+            updateTile();
 
             // If debugging is enabled, launch the agent again in one minute.
 #if DEBUG_AGENT

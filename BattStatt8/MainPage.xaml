@@ -54,9 +54,9 @@
                         <TextBlock HorizontalAlignment="Left" Height="27" Margin="59,0,0,0" TextWrapping="Wrap" Text="remaining percent:" Width="178"/>
                         <TextBlock x:Name="txtPercent" Height="61" Margin="251,0,0,0" TextWrapping="Wrap" Text="xy %" Width="195" FontSize="36" HorizontalAlignment="Left" TextAlignment="Right"/>
                         <TextBlock HorizontalAlignment="Left" Height="27" Margin="59,0,0,0" TextWrapping="Wrap" Text="remaining time:" Width="178"/>
-                        <TextBlock x:Name="txtTime" HorizontalAlignment="Left" Height="58" Margin="251,0,0,0" TextWrapping="Wrap" Text="0 : 00" Width="195" FontSize="36" TextAlignment="Right"/>
+                        <TextBlock x:Name="txtTime" HorizontalAlignment="Left" Height="58" Margin="103,0,0,0" TextWrapping="Wrap" Text="0 : 00" Width="343" FontSize="36" TextAlignment="Right"/>
                     </StackPanel>
-                    <TextBlock Text="Periodic Agent" Style="{StaticResource PhoneTextTitle2Style}"/>
+                    <TextBlock Text="Periodic Update Agent" Style="{StaticResource PhoneTextTitle2Style}"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="name: " Style="{StaticResource PhoneTextAccentStyle}"/>
                         <TextBlock Text="{Binding Name}" />
@@ -109,6 +109,7 @@
                         <TextBlock Text="{Binding LastExitReason}" />
                     </StackPanel>
                 </StackPanel>
+                <TextBlock HorizontalAlignment="Left" Height="32" Margin="321,0,0,0" TextWrapping="Wrap" Text="v0.2" Width="106" TextAlignment="Right"/>
             </StackPanel>
 
 
