@@ -5,7 +5,8 @@ ehthumbs.db
 *.suo
 *.user
 */obj/*
-app\*
+app/*
+*/PerfLogs/*
 
 # Folder config file
 Desktop.ini
