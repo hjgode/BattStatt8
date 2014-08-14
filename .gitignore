@@ -5,6 +5,7 @@ ehthumbs.db
 *.suo
 *.user
 */obj/*
+app\*
 
 # Folder config file
 Desktop.ini
@@ -30,7 +31,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must ends with two \r.
-Icon
+Icon
+
 
 # Thumbnails
 ._*
